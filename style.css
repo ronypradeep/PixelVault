@@ -1,0 +1,99 @@
+/* Full screen layout */
+body {
+  background-color: #000000; /* Dark grey */
+  color: #FFFFFF; /* White */
+  font-family: 'Audiowide', cursive;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full height */
+}
+
+.fullscreen-container {
+  width: 100%; /* Full width */
+  max-width: 800px; /* Optional: Limit width for larger screens */
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #FF2800; /* Ferrari red */
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.section {
+  margin-bottom: 30px;
+  padding: 20px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+input[type="file"], textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #333333; /* Grey */
+  border: 1px solid #FF2800; /* Ferrari red */
+  color: #FFFFFF; /* White */
+  font-family: 'Audiowide', cursive;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Space between button and spinner */
+}
+
+button {
+  background-color: #FF2800; /* Ferrari red */
+  color: #FFFFFF; /* White */
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-family: 'Audiowide', cursive;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #CC2200; /* Darker red */
+}
+
+button:disabled {
+  background-color: #666666; /* Grey */
+  cursor: not-allowed;
+}
+
+#decoded-message {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  color: #FF2800; /* Ferrari red */
+}
+
+.spinner {
+  border: 4px solid #f3f3f3; /* Light grey */
+  border-top: 4px solid #FF2800; /* Ferrari red */
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+  display: none; /* Hidden by default */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

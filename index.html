@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixel Vault</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="fullscreen-container">
+    <h1>Pixel Vault</h1>
+    <p class="subtitle">Encode and Decode Secret Messages in Images</p>
+
+    <!-- Encode Section -->
+    <div class="section">
+      <h2>Encode Message</h2>
+      <form id="encode-form" action="/encode" method="POST" enctype="multipart/form-data">
+        <label for="image-upload">Upload Image:</label>
+        <input type="file" id="image-upload" name="image" accept="image/*" required>
+        
+        <label for="secret-message">Secret Message:</label>
+        <textarea id="secret-message" name="message" placeholder="Enter your secret message..." required></textarea>
+        
+        <div class="button-container">
+          <button type="submit">Encode and Download</button>
+          <div id="encode-spinner" class="spinner"></div> <!-- Spinner for encode -->
+        </div>
+      </form>
+    </div>
+
+    <!-- Decode Section -->
+    <div class="section">
+      <h2>Decode Message</h2>
+      <form id="decode-form" action="/decode" method="POST" enctype="multipart/form-data">
+        <label for="encoded-image-upload">Upload Encoded Image:</label>
+        <input type="file" id="encoded-image-upload" name="image" accept="image/*" required>
+        
+        <div class="button-container">
+          <button type="submit">Decode Message</button>
+          <div id="decode-spinner" class="spinner"></div> <!-- Spinner for decode -->
+        </div>
+      </form>
+      <p id="decoded-message"></p>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

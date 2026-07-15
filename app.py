@@ -8,7 +8,7 @@ app = Flask(__name__)
 def encode_message(image, message):
     binary_message = ''.join(format(ord(char), '08b') for char in message)
     binary_message += '11111110'  # End of message marker
-    pixels = list(image.getdata())
+    pixels = list(image.get_flattened_data())
     if len(binary_message) > len(pixels) * 3:
         raise ValueError("Message too long for image")
     index = 0
@@ -25,7 +25,7 @@ def encode_message(image, message):
 
 # Function to decode a message from an image
 def decode_message(image):
-    pixels = list(image.getdata())
+    pixels = list(image.get_flattened_data())
     binary_message = ''
     for pixel in pixels:
         for value in pixel[:3]:

@@ -156,6 +156,13 @@ The encoded image looks almost identical to the original because only the least 
 - Does not encrypt the message before hiding it.
 
 ---
+## >_  CLI Version
+
+A CLI version of this project, [PixelVault-CLI](https://github.com/BirdMan58/pixel-vault-cli/) is also available, and is built with **C, C++ and stb lib**.
+
+Both the CLI and GUI versions use the same encoding and decoding method, allowing images created by one version to be decoded by the other.
+
+---
 
 <p align="center">
 ⭐ If you found this project useful, consider giving it a star!
